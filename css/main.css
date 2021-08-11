@@ -2,7 +2,7 @@
 ---
 ---
 
-head {
+footer {
     background-image: url('{{ site.baseurl }}/img/bicycle.jpg');
   }
 

@@ -2,7 +2,10 @@
 ---
 ---
 
-
+header {
+    background-image: url('{{ site.baseurl }}/img/bicycle.jpg');
+  }
+  
 body {
     overflow-y: hidden ! important;
     overflow-x: hidden ! important;

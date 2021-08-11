@@ -1,4 +1,9 @@
-body { margin: 60px auto; width: 70%; }
+body{
+    background-color: #033663;
+    background-image: url(background.png);
+    background-repeat-y: no-repeat;
+    color: #FFFFFF;
+}
 
 a { text-decoration: none; color: #999; }
 a:hover { text-decoration: underline; }

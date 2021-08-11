@@ -1,12 +1,4 @@
 
-body{
-    background-color: #FFFFFF;
-    
-    background-repeat: no-repeat;
-    background-position: center center;
-    color: #FFFFFF;
-}
-
 body {
     overflow-y: hidden ! important;
     overflow-x: hidden ! important;
@@ -15,5 +7,5 @@ body {
     /*background-size: cover;*/
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: bottom;
 }

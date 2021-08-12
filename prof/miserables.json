@@ -6,6 +6,11 @@
       "label": "AWS"
     },
     {
+      "id": "Airflow",
+      "group": 1,
+      "label": "Airflow"
+    },
+    {
       "id": "Hive",
       "group": 1,
       "label": "Hive"
@@ -59,12 +64,52 @@
       "id": "SQL",
       "group": 2,
       "label": "SQL"
+    },
+    {
+      "id": "Pandas",
+      "group": 3,
+      "label": "Pandas"
+    },
+    {
+      "id": "Django",
+      "group": 3,
+      "label": "Django"
+    },
+    {
+      "id": "dplyr",
+      "group": 3,
+      "label": "dplyr"
+    },
+    {
+      "id": "ggplot",
+      "group": 3,
+      "label": "ggplot"
+    },
+    {
+      "id": "sklearn",
+      "group": 3,
+      "label": "sklearn"
+    },
+    {
+      "id": "PyTorch",
+      "group": 3,
+      "label": "PyTorch"
+    },
+    {
+      "id": "NumPy",
+      "group": 3,
+      "label": "NumPy"
     }
   ],
   "links": [
     {
       "source": "1",
       "target": "AWS",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Airflow",
       "value": 4
     },
     {
@@ -85,6 +130,11 @@
     {
       "source": "1",
       "target": "Docker",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Airflow",
       "value": 4
     },
     {
@@ -111,6 +161,41 @@
       "source": "2",
       "target": "SQL",
       "value": 4
-    }
+    },
+    {
+      "source": "3",
+      "target": "Pandas",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "Django",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "dplyr",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "ggplot",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "sklearn",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Pytorch",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "NumPy",
+      "value": 4
+    },
   ]
 }

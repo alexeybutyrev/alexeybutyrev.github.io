@@ -37,4 +37,4 @@ ul.posts li { list-style: none; }
 .cv address, .cv p { font-size: 1.2em; }
 .cv .download { float: right; font-size: .8em; text-transform: uppercase; }
 
-.dataart {margin-right: 10px;margin-top: 20px;width:100%}
+.dataart {border-bottom: 1px solid #d5d5d5; margin: 10px; width:100%}

@@ -43,7 +43,7 @@ title: Alexey Butyrev
 			.selectAll("line")
 			.data(graph.links)
 			.enter().append("line")
-			.attr("stroke-width", function (d) { return Math.sqrt(d.value); });
+			.attr("stroke-width", function (d) { return 10 + Math.sqrt(d.value); });
 
 		var node = svg.append("g")
 			.attr("class", "nodes")

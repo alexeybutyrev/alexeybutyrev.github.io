@@ -280,37 +280,37 @@
     {
       "source": "1",
       "target": "2",
-      "value": 4
+      "value": 10
     },
     {
       "source": "1",
       "target": "3",
-      "value": 4
+      "value": 10
     },
     {
       "source": "1",
       "target": "4",
-      "value": 4
+      "value": 10
     },
     {
       "source": "2",
       "target": "3",
-      "value": 4
+      "value": 10
     },
     {
       "source": "2",
       "target": "4",
-      "value": 4
+      "value": 10
     },
     {
       "source": "2",
       "target": "4",
-      "value": 4
+      "value": 10
     },
     {
       "source": "3",
       "target": "4",
-      "value": 4
+      "value": 10
     }
   ]
 }

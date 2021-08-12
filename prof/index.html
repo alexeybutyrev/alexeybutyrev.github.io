@@ -78,7 +78,7 @@ title: Alexey Butyrev
 			.on("tick", ticked);
 
 		simulation.force("link")
-			.links(graph.links);
+			.links(graph.links).distance([150]);
 
 		function ticked() {
 			link

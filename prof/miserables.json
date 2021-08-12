@@ -139,6 +139,11 @@
       "id": "Applied Math",
       "group": 4,
       "label": "Applied Math"
+    },
+    {
+      "id": "Software Development",
+      "group": 4,
+      "label": "Software Development"
     }
   ],
   "links": [
@@ -228,12 +233,12 @@
       "value": 4
     },
     {
-      "source": "1",
+      "source": "3",
       "target": "PyTorch",
       "value": 4
     },
     {
-      "source": "1",
+      "source": "3",
       "target": "NumPy",
       "value": 4
     },
@@ -264,7 +269,47 @@
     },
     {
       "source": "4",
+      "target": "Software Development",
+      "value": 4
+    },
+    {
+      "source": "4",
       "target": "Applied Math",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "2",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "3",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "4",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "4",
       "value": 4
     }
   ]

@@ -1,1 +1,316 @@
-{"nodes": [{"id": "0", "group": 0, "label": ""}, {"id": "AWS", "group": 1, "label": "AWS"}, {"id": "Airflow", "group": 1, "label": "Airflow"}, {"id": "Hive", "group": 1, "label": "Hive"}, {"id": "Presto", "group": 1, "label": "Presto"}, {"id": "Redshift", "group": 1, "label": "Redshift"}, {"id": "1", "group": 1, "label": ""}, {"id": "3", "group": 3, "label": ""}, {"id": "Docker", "group": 1, "label": "Docker"}, {"id": "Python", "group": 2, "label": "Python"}, {"id": "R", "group": 2, "label": "R"}, {"id": "2", "group": 2, "label": ""}, {"id": "Spark", "group": 2, "label": "Spark"}, {"id": "Bash", "group": 2, "label": "Bash"}, {"id": "SQL", "group": 2, "label": "SQL"}, {"id": "Pandas", "group": 3, "label": "Pandas"}, {"id": "Django", "group": 3, "label": "Django"}, {"id": "dplyr", "group": 3, "label": "dplyr"}, {"id": "ggplot", "group": 3, "label": "ggplot"}, {"id": "sklearn", "group": 3, "label": "sklearn"}, {"id": "PyTorch", "group": 3, "label": "PyTorch"}, {"id": "NumPy", "group": 3, "label": "NumPy"}, {"id": "Jupyter", "group": 1, "label": "Jupyter"}, {"id": "Git", "group": 1, "label": "Git"}, {"id": "4", "group": 4, "label": ""}, {"id": "Data Science", "group": 4, "label": "Data Science"}, {"id": "Machine Learning", "group": 4, "label": "Machine Learning"}, {"id": "Deep Learning", "group": 4, "label": "Deep Learning"}, {"id": "Applied Math", "group": 4, "label": "Applied Math"}, {"id": "Software Development", "group": 4, "label": "Software Development"}, {"id": "Tableau", "group": 1, "label": "Tableau"}], "links": [{"source": "1", "target": "AWS", "value": 10}, {"source": "1", "target": "Airflow", "value": 10}, {"source": "1", "target": "Hive", "value": 10}, {"source": "1", "target": "Presto", "value": 10}, {"source": "1", "target": "Redshift", "value": 10}, {"source": "1", "target": "Docker", "value": 10}, {"source": "1", "target": "Airflow", "value": 10}, {"source": "2", "target": "Python", "value": 10}, {"source": "2", "target": "R", "value": 10}, {"source": "2", "target": "Bash", "value": 10}, {"source": "2", "target": "Spark", "value": 10}, {"source": "2", "target": "SQL", "value": 10}, {"source": "3", "target": "Pandas", "value": 10}, {"source": "3", "target": "Django", "value": 10}, {"source": "3", "target": "dplyr", "value": 10}, {"source": "3", "target": "ggplot", "value": 10}, {"source": "3", "target": "sklearn", "value": 10}, {"source": "3", "target": "PyTorch", "value": 10}, {"source": "3", "target": "NumPy", "value": 10}, {"source": "1", "target": "Jupyter", "value": 10}, {"source": "1", "target": "Git", "value": 10}, {"source": "4", "target": "Data Science", "value": 10}, {"source": "4", "target": "Machine Learning", "value": 10}, {"source": "4", "target": "Deep Learning", "value": 10}, {"source": "4", "target": "Software Development", "value": 20}, {"source": "4", "target": "Applied Math", "value": 10}, {"source": "0", "target": "1", "value": 10}, {"source": "0", "target": "2", "value": 10}, {"source": "0", "target": "3", "value": 10}, {"source": "0", "target": "4", "value": 100}, {"source": "1", "target": "Tableau", "value": 4}]}
+{
+  "nodes": [
+    {
+      "id": "0",
+      "group": 0,
+      "label": ""
+    },
+    {
+      "id": "AWS",
+      "group": 1,
+      "label": "AWS"
+    },
+    {
+      "id": "Airflow",
+      "group": 1,
+      "label": "Airflow"
+    },
+    {
+      "id": "Hive",
+      "group": 1,
+      "label": "Hive"
+    },
+    {
+      "id": "Presto",
+      "group": 1,
+      "label": "Presto"
+    },
+    {
+      "id": "Redshift",
+      "group": 1,
+      "label": "Redshift"
+    },
+    {
+      "id": "1",
+      "group": 1,
+      "label": ""
+    },
+    {
+      "id": "3",
+      "group": 3,
+      "label": ""
+    },
+    {
+      "id": "Docker",
+      "group": 1,
+      "label": "Docker"
+    },
+    {
+      "id": "Python",
+      "group": 2,
+      "label": "Python"
+    },
+    {
+      "id": "R",
+      "group": 2,
+      "label": "R"
+    },
+    {
+      "id": "2",
+      "group": 2,
+      "label": ""
+    },
+    {
+      "id": "Spark",
+      "group": 2,
+      "label": "Spark"
+    },
+    {
+      "id": "Bash",
+      "group": 2,
+      "label": "Bash"
+    },
+    {
+      "id": "SQL",
+      "group": 2,
+      "label": "SQL"
+    },
+    {
+      "id": "Pandas",
+      "group": 3,
+      "label": "Pandas"
+    },
+    {
+      "id": "Django",
+      "group": 3,
+      "label": "Django"
+    },
+    {
+      "id": "dplyr",
+      "group": 3,
+      "label": "dplyr"
+    },
+    {
+      "id": "ggplot",
+      "group": 3,
+      "label": "ggplot"
+    },
+    {
+      "id": "sklearn",
+      "group": 3,
+      "label": "sklearn"
+    },
+    {
+      "id": "PyTorch",
+      "group": 3,
+      "label": "PyTorch"
+    },
+    {
+      "id": "NumPy",
+      "group": 3,
+      "label": "NumPy"
+    },
+    {
+      "id": "Jupyter",
+      "group": 1,
+      "label": "Jupyter"
+    },
+    {
+      "id": "Git",
+      "group": 1,
+      "label": "Git"
+    },
+    {
+      "id": "4",
+      "group": 4,
+      "label": ""
+    },
+    {
+      "id": "Data Science",
+      "group": 4,
+      "label": "Data Science"
+    },
+    {
+      "id": "Machine Learning",
+      "group": 4,
+      "label": "Machine Learning"
+    },
+    {
+      "id": "Deep Learning",
+      "group": 4,
+      "label": "Deep Learning"
+    },
+    {
+      "id": "Applied Math",
+      "group": 4,
+      "label": "Applied Math"
+    },
+    {
+      "id": "Software Development",
+      "group": 4,
+      "label": "Software Development"
+    },
+    {
+      "id": "Tableau",
+      "group": 1,
+      "label": "Tableau"
+    }
+  ],
+  "links": [
+    {
+      "source": "1",
+      "target": "AWS",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Airflow",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Hive",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Presto",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Redshift",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Docker",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Airflow",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "Python",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "R",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "Bash",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "Spark",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "SQL",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "Pandas",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "Django",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "dplyr",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "ggplot",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "sklearn",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "PyTorch",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "NumPy",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Jupyter",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Git",
+      "value": 4
+    },
+    {
+      "source": "4",
+      "target": "Data Science",
+      "value": 4
+    },
+    {
+      "source": "4",
+      "target": "Machine Learning",
+      "value": 4
+    },
+    {
+      "source": "4",
+      "target": "Deep Learning",
+      "value": 4
+    },
+    {
+      "source": "4",
+      "target": "Software Development",
+      "value": 4
+    },
+    {
+      "source": "4",
+      "target": "Applied Math",
+      "value": 4
+    },
+    {
+      "source": "0",
+      "target": "1",
+      "value": 16
+    },
+    {
+      "source": "0",
+      "target": "2",
+      "value": 16
+    },
+    {
+      "source": "0",
+      "target": "3",
+      "value": 16
+    },
+    {
+      "source": "0",
+      "target": "4",
+      "value": 16
+    },
+    {
+      "source": "1",
+      "target": "Tableau",
+      "value": 4
+    }
+  ]
+}

@@ -6,6 +6,21 @@
       "label": "AWS"
     },
     {
+      "id": "Hive",
+      "group": 1,
+      "label": "Hive"
+    },
+    {
+      "id": "Presto",
+      "group": 1,
+      "label": "Presto"
+    },
+    {
+      "id": "Redshift",
+      "group": 1,
+      "label": "Redshift"
+    },
+    {
       "id": "1",
       "group": 1,
       "label": ""
@@ -39,12 +54,32 @@
       "id": "Bash",
       "group": 2,
       "label": "Bash"
+    },
+    {
+      "id": "SQL",
+      "group": 2,
+      "label": "SQL"
     }
   ],
   "links": [
     {
       "source": "1",
       "target": "AWS",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Hive",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Presto",
+      "value": 4
+    },
+    {
+      "source": "1",
+      "target": "Redshift",
       "value": 4
     },
     {
@@ -65,6 +100,16 @@
     {
       "source": "2",
       "target": "Bash",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "Spark",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "SQL",
       "value": 4
     }
   ]

@@ -14,6 +14,31 @@
       "id": "Docker",
       "group": 1,
       "label": "Docker"
+    },
+    {
+      "id": "Python",
+      "group": 2,
+      "label": "Python"
+    },
+    {
+      "id": "R",
+      "group": 2,
+      "label": "R"
+    },
+    {
+      "id": "2",
+      "group": 2,
+      "label": ""
+    },
+    {
+      "id": "Spark",
+      "group": 2,
+      "label": "Spark"
+    },
+    {
+      "id": "Bash",
+      "group": 2,
+      "label": "Bash"
     }
   ],
   "links": [
@@ -25,6 +50,21 @@
     {
       "source": "1",
       "target": "Docker",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "Python",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "R",
+      "value": 4
+    },
+    {
+      "source": "2",
+      "target": "Bash",
       "value": 4
     }
   ]

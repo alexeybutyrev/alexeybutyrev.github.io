@@ -7,7 +7,7 @@ body{
 }
 */
 
-body { margin: 70px; width: 100%; }
+body { margin: 70px; width: 100%; border-bottom: 1px solid #d5d5d5;}
 
 a { text-decoration: none; color: #999; }
 a:hover { text-decoration: underline; }
@@ -37,4 +37,4 @@ ul.posts li { list-style: none; }
 .cv address, .cv p { font-size: 1.2em; }
 .cv .download { float: right; font-size: .8em; text-transform: uppercase; }
 
-.dataart {border-bottom: 1px solid #d5d5d5; margin: 10px; width:100%}
+.dataart {margin: 10px; width:100%}

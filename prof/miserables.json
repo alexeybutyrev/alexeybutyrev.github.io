@@ -1,6 +1,11 @@
 {
   "nodes": [
     {
+      "id": "0",
+      "group": 0,
+      "label": ""
+    },
+    {
       "id": "AWS",
       "group": 1,
       "label": "AWS"
@@ -278,37 +283,22 @@
       "value": 4
     },
     {
-      "source": "1",
+      "source": "0",
+      "target": "1",
+      "value": 10
+    },
+    {
+      "source": "0",
       "target": "2",
       "value": 10
     },
     {
-      "source": "1",
+      "source": "0",
       "target": "3",
       "value": 10
     },
     {
-      "source": "1",
-      "target": "4",
-      "value": 10
-    },
-    {
-      "source": "2",
-      "target": "3",
-      "value": 10
-    },
-    {
-      "source": "2",
-      "target": "4",
-      "value": 10
-    },
-    {
-      "source": "2",
-      "target": "4",
-      "value": 10
-    },
-    {
-      "source": "3",
+      "source": "0",
       "target": "4",
       "value": 10
     }

@@ -326,6 +326,11 @@
       "source": "3",
       "target": "4",
       "value": 4
+    },
+    {
+      "source": "1",
+      "target": "4",
+      "value": 4
     }
   ]
 }

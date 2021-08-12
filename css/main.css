@@ -38,5 +38,5 @@ ul.posts li { list-style: none; }
 .cv address, .cv p { font-size: 1.2em; }
 .cv .download { float: right; font-size: .8em; text-transform: uppercase; }
 
-.blurb {border-top: 1px solid #d5d5d5; margin-bottom: 10px;}
+.blurb {border-bottom: 1px solid #d5d5d5; margin-bottom: 10px;}
 .dataart {width:100%; margin-top: 10px; }

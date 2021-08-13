@@ -52,8 +52,21 @@ ul.posts li { list-style: none; }
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25em;
-    float: right;
     background: #f0ad4e;
+    border-radius: 1020px;
+}
+.hard {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background: #d9534f;
     border-radius: 1020px;
 }
 

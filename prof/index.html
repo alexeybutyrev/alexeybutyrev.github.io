@@ -1,15 +1,218 @@
 ---
 layout: default
-title: About Hank Quinlan
+title: Alexey Butyrev
 ---
+<h1>Skills</h1>
+<meta charset="utf-8">
+<style>
+	.links line {
+		stroke: #999;
+		stroke-opacity: 0.6;
+	}
 
-		<div class="about">
-			<h1>About</h1>
-			<p>You can optionally insert a brief bio here. You went to this school, you studied that, you now work in this field with research interests in that subject. At your previous position at this place, you worked on this or that. You can list some of your significant accomplishments, awards, or recognition here as well. You live in this city with these animals and people. In your free time you like X, Y, and Z.</p>
+	.nodes circle {
+		stroke: #fff;
+		stroke-width: 1.5px;
+	}
 
-			<ul class="contacts">
-				<li><a href="#">@TwitterHandle</a></li>
-				<li><a href="#">Your Departmental Webpage</a></li>
-				<li><a href="#">Another site you want to link to</a></li>
-				</ul>
-		</div>
+	text {
+		font-family: sans-serif;
+		font-size: 16px;
+	}
+</style>
+<svg width="960" height="600"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+	var svg = d3.select("svg"),
+		width = +svg.attr("width"),
+		height = +svg.attr("height");
+
+	var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+	var simulation = d3.forceSimulation()
+		.force("link", d3.forceLink().id(function (d) { return d.id; }))
+		.force("charge", d3.forceManyBody())
+		.force("center", d3.forceCenter(width / 2, height / 2));
+
+	d3.json("miserables.json", function (error, graph) {
+		if (error) throw error;
+
+		var link = svg.append("g")
+			.attr("class", "links")
+			.selectAll("line")
+			.data(graph.links)
+			.enter().append("line")
+			.attr("stroke-width", function (d) { return Math.sqrt(d.value); });
+
+		var node = svg.append("g")
+			.attr("class", "nodes")
+			.selectAll("g")
+			.data(graph.nodes)
+			.enter().append("g")
+
+		var circles = node.append("circle")
+			.attr("r", 10)
+			.attr("fill", function (d) { return color(d.group); });
+
+		// Create a drag handler and append it to the node object instead
+		var drag_handler = d3.drag()
+			.on("start", dragstarted)
+			.on("drag", dragged)
+			.on("end", dragended);
+
+		drag_handler(node);
+
+		var lables = node.append("text")
+			.text(function (d) {
+				return d.label;
+			})
+			.attr('x', 6)
+			.attr('y', 3);
+
+		node.append("title")
+			.text(function (d) { return d.label; });
+
+		simulation
+			.nodes(graph.nodes)
+			.on("tick", ticked);
+
+		simulation.force("link")
+			.links(graph.links).distance([150]);
+
+		function ticked() {
+			link
+				.attr("x1", function (d) { return d.source.x; })
+				.attr("y1", function (d) { return d.source.y; })
+				.attr("x2", function (d) { return d.target.x; })
+				.attr("y2", function (d) { return d.target.y; });
+
+			node
+				.attr("transform", function (d) {
+					return "translate(" + d.x + "," + d.y + ")";
+				})
+		}
+	});
+
+	function dragstarted(d) {
+		if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+		d.fx = d.x;
+		d.fy = d.y;
+	}
+
+	function dragged(d) {
+		d.fx = d3.event.x;
+		d.fy = d3.event.y;
+	}
+
+	function dragended(d) {
+		if (!d3.event.active) simulation.alphaTarget(0);
+		d.fx = null;
+		d.fy = null;
+	}
+
+</script>
+
+<h1>Certificates</h1>
+<div class="blurb2">
+	<ul style="list-style-type:square">
+		<li> <a href="https://www.coursera.org/account/accomplishments/certificate/5ES5TNDBHHAL">Bayesian Statistics:
+				From
+				Concept to Data Analysis</a></li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/certificate/K6R9LA8YD22G">Fundamentals of
+				Reinforcement Learning</a></li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/certificate/VYGJYS8P9W5G">Mathematical
+				Biostatistics
+				Boot Camp 2</a></li>
+		<li> <a href="https://realpython.com/certificates/2d627664-91ca-446f-9384-7898494944b5/">Documenting Python
+				Projects
+				With Sphinx and Read The Docs</a></li>
+		<li> <a href="https://courses.edx.org/certificates/c45c850c9e894ab5b2f9805612ea20b4">Statistical Learning</a>
+		</li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/certificate/D5385EUUMBU7/">Regression Models</a>
+		</li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/certificate/79AENT84MDPE">Practical Machine
+				Learning
+			</a></li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/certificate/3J9Q3LB68N6T">Statistical
+				Inference</a></li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/certificate/79AENT84MDPE">Practical Machine
+				Learning
+			</a></li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/certificate/HQ3TS42LULVU">Competitive
+				Programmer's
+				Core Skills</a></li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/verify/2RLKF6KB8Y5U">AWS Fundamentals: Building
+				Serverless Applications</a></li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/verify/7Q5KJQ6GMXVA">Deep Neural Networks with
+				PyTorch</a></li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/certificate/JN47YG28GHR2">Introduction to
+				CSS3</a></li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/verify/YUT3LMXVLEW8">Practical Time Series
+				Analysis
+			</a></li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/verify/L5MQMFF3LCP4">Improving Deep Neural
+				Networks:
+				Hyperparameter Tuning, Regularization and Optimization</a></li>
+		<li> <a href="https://www.coursera.org/account/accomplishments/verify/A7Q5JS95HHWE">Neural Networks and Deep
+				Learning</a></li>
+
+	</ul>
+</div>
+
+<h1>Blog Posts</h1>
+<p>My small Medium posts</p>
+<div class="blurb2">
+	<ul style="list-style-type:square">
+		<li> <a href="https://medium.com/@AlexeyButyrev/xgboost-on-aws-lambda-345f1394c2b">XGBoost on AWS Lambda</a>
+		</li>
+		<li> <a href="https://medium.com/@AlexeyButyrev/docker-r-prophet-1342cae546a3">Docker R Prophet</a></li>
+		<li> <a href="https://medium.com/@AlexeyButyrev/plotly-charts-in-sagemaker-jupyterlab-125987e9eda7">Plotly
+				Charts In
+				Sagemaker JupyterLab</a></li>
+	</ul>
+</div>
+
+<h1>Meetups</h1>
+<p>My past Meetups</p>
+<div class="blurb2">
+	<ul style="list-style-type:square">
+		<li> <a
+				href="https://docs.google.com/presentation/d/1J3QkM4dnqyXGQhnxcWTbWdtZlrFbFp-W/edit?usp=sharing&ouid=106826462695486049087&rtpof=true&sd=true">AlphaZero's
+				Groundbreaking Chess Strategies and the Promise of AI</a></li>
+		<li> <a href="https://www.meetup.com/Phoenix-R-User-Group/events/251738915/">Introduction to Building Data
+				Science Products</a></li>
+		<li> <a href="https://www.meetup.com/Phoenix-R-User-Group/events/246453925/">Introduction to Data Visualization
+				with ggplot2</a></li>
+		<li> <a href="https://www.meetup.com/Phoenix-R-User-Group/events/235785029/">Introduction to knitr</a></li>
+
+	</ul>
+</div>
+
+<h1>LC Solutions</h1>
+<p>Some of my non-obivious but working Leetcode codding problems solutions</p>
+<div class="blurb2">
+	<ul style="list-style-type:square">
+
+
+		<li> <a
+				href="https://leetcode.com/problems/map-sum-pairs/discuss/1372372/python-trie-without-hash-map-memory-saver">Map
+				Sum Pairs</a> <span class="medium">Medium</span></li>
+
+		<li> <a
+				href="https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/discuss/1362851/python-not-fibonacci-pre-calculate-binary-search">Non-negative
+				Integers without Consecutive Ones</a> <span class="hard">Hard</span></li>
+
+		<li> <a href="https://leetcode.com/problems/k-empty-slots/discuss/1310110/python-sortedcontainer-nlogn">K Empty
+				Slots</a> <span class="hard">Hard</span></li>
+
+		<li> <a href="https://leetcode.com/problems/divide-two-integers/discuss/1233032/binary-search-python">Divide Two
+				Integers</a> <span class="medium">Medium</span>
+		</li>
+		<li> <a
+				href="https://leetcode.com/problems/greatest-sum-divisible-by-three/discuss/1382710/python-heap-solution">Greatest
+				Sum Divisible by Three</a> <span class="medium">Medium</span></li>
+
+
+	</ul>
+</div>

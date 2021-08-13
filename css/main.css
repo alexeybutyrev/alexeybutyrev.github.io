@@ -41,7 +41,7 @@ ul.posts li { list-style: none; }
 .blurb {border-bottom: 1px solid #d5d5d5; margin-bottom: 10px;}
 .dataart {width:100%; margin-top: 10px; }
 
-.label {
+.medium {
     display: inline;
     padding: .2em .6em .3em;
     font-size: 75%;
@@ -52,15 +52,10 @@ ul.posts li { list-style: none; }
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25em;
-}
-.pull-right {
     float: right;
-}
-.label-Medium, .label-medium {
     background: #f0ad4e;
-}
-.round {
     border-radius: 1020px;
 }
+
 
 

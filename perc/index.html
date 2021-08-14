@@ -30,6 +30,9 @@ title: Hobbies
 	/* Position the image container (needed to position the left and right arrows) */
 	.container {
 		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%
 	}
 
 	/* Hide the images by default */
@@ -113,8 +116,6 @@ title: Hobbies
 
 <body margin=20%; width=50%>
 
-	<h2 style="text-align:center">Slideshow Gallery</h2>
-
 	<div class="container">
 		<div class="mySlides">
 			<div class="numbertext">1 / 4</div>
@@ -149,8 +150,7 @@ title: Hobbies
 					alt="COVID CrossFit">
 			</div>
 			<div class="column">
-				<img class="demo cursor" src="bike.png style=" width:100%" onclick="currentSlide(2)"
-					alt="Mountain biking">
+				<img class="demo cursor" src="bike.png" width:100%" onclick="currentSlide(2)" alt="Mountain biking">
 			</div>
 			<div class="column">
 				<img class="demo cursor" src="mountain.png" style="width:100%" onclick="currentSlide(3)"

@@ -28,16 +28,13 @@ title: Hobbies
 	}
 
 	/* Position the image container (needed to position the left and right arrows) */
-	.img {
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		width: 80%
-	}
 
 	/* Hide the images by default */
 	.mySlides {
 		display: none;
+		margin-left: auto;
+		margin-right: auto;
+		width: 30%
 	}
 
 	/* Add a pointer when hovering over the thumbnail images */
@@ -71,7 +68,7 @@ title: Hobbies
 	/* On hover, add a black background color with a little bit see-through */
 	.prev:hover,
 	.next:hover {
-		background-color: rgba(0, 0, 0, 0.8);
+		background-color: white;
 	}
 
 	/* Number text (1/3 etc) */
@@ -86,7 +83,7 @@ title: Hobbies
 	/* Container for image text */
 	.caption-container {
 		text-align: center;
-		background-color: #222;
+		background-color: white;
 		padding: 2px 16px;
 		color: white;
 	}
@@ -116,7 +113,7 @@ title: Hobbies
 
 <body margin=20%; width=50%>
 
-	<div class="container">
+	<div class="container2">
 		<div class="mySlides">
 			<div class="numbertext">1 / 4</div>
 			<img src="run.png" style="width:100%">
@@ -139,6 +136,10 @@ title: Hobbies
 
 		<a class="prev" onclick="plusSlides(-1)">❮</a>
 		<a class="next" onclick="plusSlides(1)">❯</a>
+
+		<div class="caption-container">
+			<p id="caption"></p>
+		</div>
 
 
 		<script>

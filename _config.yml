@@ -1,3 +1,5 @@
 name: Alexey Butyrev
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+
+analytics-id: "UA-64033531-1"

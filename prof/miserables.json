@@ -1,6 +1,11 @@
 {
   "nodes": [
     {
+      "id": "Data Visualization",
+      "group": 4,
+      "label": "Data Visualization"
+    },
+    {
       "id": "AWS",
       "group": 1,
       "label": "AWS"
@@ -290,6 +295,11 @@
     {
       "source": "1",
       "target": "Tableau",
+      "value": 4
+    },
+    {
+      "source": "4",
+      "target": "Data Visualization",
       "value": 4
     },
     {

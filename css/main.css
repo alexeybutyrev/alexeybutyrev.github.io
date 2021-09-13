@@ -24,9 +24,9 @@ h4 { font-size: 1.9em; }
 nav ul, footer ul { font-size: 1em; font-family: 'Orbitron', sans-serif, 'Arial', 'Sans-Serif'; padding: 0px; list-style: none; font-weight: bold; }
 nav ul li, footer ul li { display: inline; margin-right: 20px; }
 a:active {
-    font-style: underline;
+    background-color: yellow;
   }
-  
+
 footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
 
 /* Blog */

@@ -11,6 +11,11 @@
       "label": "AWS"
     },
     {
+      "id": "GCP",
+      "group": 1,
+      "label": "GCP"
+    },
+    {
       "id": "Airflow",
       "group": 1,
       "label": "Airflow"
@@ -162,6 +167,11 @@
     }
   ],
   "links": [
+    {
+      "source": "1",
+      "target": "GCP",
+      "value": 4
+    },
     {
       "source": "1",
       "target": "AWS",

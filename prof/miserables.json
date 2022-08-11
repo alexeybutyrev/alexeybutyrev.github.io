@@ -164,9 +164,19 @@
       "id": "pytest",
       "group": 3,
       "label": "pytest"
+    },
+    {
+      "id": "Mode",
+      "group": 1,
+      "label": "Mode"
     }
   ],
   "links": [
+    {
+      "source": "1",
+      "target": "Mode",
+      "value": 4
+    },
     {
       "source": "1",
       "target": "GCP",

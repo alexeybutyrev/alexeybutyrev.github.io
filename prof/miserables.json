@@ -96,6 +96,11 @@
       "label": "dplyr"
     },
     {
+      "id": "tensorflow",
+      "group": 3,
+      "label": "tensorflow"
+    },
+    {
       "id": "ggplot",
       "group": 3,
       "label": "ggplot"
@@ -345,6 +350,11 @@
     {
       "source": "3",
       "target": "pytest",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "tensorflow",
       "value": 4
     }
   ]

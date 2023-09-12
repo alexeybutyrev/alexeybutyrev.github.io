@@ -101,6 +101,11 @@
       "label": "tensorflow"
     },
     {
+      "id": "Keras",
+      "group": 3,
+      "label": "Keras"
+    },
+    {
       "id": "ggplot",
       "group": 3,
       "label": "ggplot"
@@ -139,6 +144,16 @@
       "id": "Data Science",
       "group": 4,
       "label": "Data Science"
+    },
+    {
+      "id": "AI",
+      "group": 4,
+      "label": "AI"
+    },
+    {
+      "id": "LLM",
+      "group": 4,
+      "label": "LLM"
     },
     {
       "id": "Machine Learning",
@@ -328,6 +343,16 @@
       "value": 4
     },
     {
+      "source": "4",
+      "target": "AI",
+      "value": 4
+    },
+    {
+      "source": "4",
+      "target": "LLM",
+      "value": 4
+    },
+    {
       "source": "1",
       "target": "2",
       "value": 4
@@ -355,6 +380,11 @@
     {
       "source": "3",
       "target": "tensorflow",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "Keras",
       "value": 4
     }
   ]

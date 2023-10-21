@@ -25,7 +25,7 @@ title: Hobbies
 	const layout = d3.layout.cloud()
 		.size([800, 400])
 		.words(words.map(function (d) {
-			return { text: d.text, size: 10 + Math.random() * 40 };
+			return { text: d.text, size: 10 + Math.random() * 40, color: getRandomColor() };
 		}))
 		.padding(5)
 		.rotate(0)
@@ -34,7 +34,10 @@ title: Hobbies
 		.on("end", draw);
 
 	layout.start();
-
+	function getRandomColor() {
+		// Generate a random hexadecimal color
+		return "#" + Math.floor(Math.random() * 16777215).toString(16);
+	}
 	function draw(words) {
 		container
 			.append("svg")

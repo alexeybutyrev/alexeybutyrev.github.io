@@ -5,7 +5,13 @@ title: Hobbies
 <div id="word-cloud"></div>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.js"></script>
-
+<style>
+	/* Style for hyperlinks in the word cloud */
+	a {
+		text-decoration: none;
+		color: #000;
+	}
+</style>
 <script>
 	const words = [
 		{ text: "Word1", link: "https://example.com/word1" },

@@ -33,7 +33,6 @@ title: Hobbies
 				return { text: d.text, size: 10 + Math.random() * 40, color: getRandomColor(), rotate: getRandomRotation() };
 			}))
 			.padding(5)
-			.rotate(0)
 			.font("Impact")
 			.fontSize(function (d) { return d.size; })
 			.on("end", draw);

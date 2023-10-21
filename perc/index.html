@@ -4,6 +4,7 @@ title: Hobbies
 ---
 
 <div class="blurb2">
+	<h1>Outside of Work</h1>
 	<div id="word-cloud"></div>
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.js"></script>
@@ -45,7 +46,7 @@ title: Hobbies
 
 			const textElements = svg
 				.selectAll("text")
-				.data(words)
+				.data(words) // Use the data join correctly
 				.enter()
 				.append("text")
 				.style("font-size", "1px") // Start with a small font size
@@ -75,7 +76,6 @@ title: Hobbies
 		}
 	</script>
 
-	<h1>Outside of Work</h1>
 	<p>
 		I begin my weekdays with invigorating <a href="https://games.crossfit.com/athlete/1683143">CrossFit</a>
 		classes.

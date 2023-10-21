@@ -4,63 +4,79 @@ title: Hobbies
 ---
 <div class="blurb2">
 	<h1>Outside of Work</h1>
-	<meta charset="utf-8">
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3-cloud.js"></script>
 	<style>
-		.links line {
-			stroke: #999;
-			stroke-opacity: 0.6;
-		}
-
-		.nodes circle {
-			stroke: #fff;
-			stroke-width: 1.5px;
-		}
-
-		text {
+		body {
 			font-family: sans-serif;
-			font-size: 16px;
+		}
+
+		svg {
+			width: 500px;
+			height: 500px;
+		}
+
+		.text {
+			font-size: 20px;
+			fill: black;
 		}
 	</style>
-	<svg width="960" height="600"></svg>
-	<script src="https://d3js.org/d3.v5.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.js"></script>
-	<script>
-		const words = [
-			{ text: "Word1", link: "https://example.com/word1" },
-			{ text: "Word2", link: "https://example.com/word2" },
-			{ text: "Word3", link: "https://example.com/word3" },
-			// Add more words and links as needed
-		];
+	</head>
 
-		const container = d3.select("#word-cloud");
+	<body>
 
-		container.selectAll("a")
-			.data(words)
-			.enter()
-			.append("a")
-			.attr("href", d => d.link)  // Add hyperlink
-			.append("span")
-			.text(d => d.text)
-			.style("font-size", function (d) {
-				return Math.random() * 24 + 12 + "px"; // Random font size (adjust as needed)
-			})
-			.style("margin", "5px")  // Add spacing between words
-			.style("color", "#000")  // Text color
-			.style("text-decoration", "none")
-			.style("display", "inline-block"); // Display words inline
+		<svg id="word-cloud"></svg>
 
+		<script>
 
-	</script>
-	<p>
-		I begin my weekdays with invigorating <a href="https://games.crossfit.com/athlete/1683143">CrossFit</a>
-		classes.
-		My quality time with my 11-year-old son is a cherished
-		priority. Saturdays are dedicated to conquering <a href="https://leetcode.com/alexey_wish/"> coding
-			competitions</a>, and my latest passion is tackling <a
-			href="https://drive.google.com/file/d/1SqelAr8MxaKq5mMCCU8aXsHf0lpdco-K/view?usp=sharing">Spartan
-			Races</a>. I also indulge in beach volleyball and chess occasionally, though not as frequently as I'd
-		prefer. My
-		love for reading is evident; you can explore my book recommendations on my <a
-			href="https://www.goodreads.com/alexeybutyrev"> Goodreads</a> profile.
-	</p>
+			// Create a new word cloud instance.
+			var wordCloud = d3.layout.cloud()
+				.size([500, 500])
+				.padding(5)
+				.rotate(function () { return ~~(Math.random() * 2) * 90; })
+				.font("Impact")
+				.fontSize(function (d) { return d.size; })
+				.text(function (d) { return d.text; });
+
+			// Load the word cloud data.
+			d3.csv("data.csv", function (data) {
+
+				// Start the word cloud layout.
+				wordCloud.words(data).start();
+
+				// Draw the word cloud.
+				var cloud = d3.select("#word-cloud").selectAll("text")
+					.data(wordCloud.words())
+					.enter().append("text")
+					.attr("class", "text")
+					.attr("x", function (d) { return d.x; })
+					.attr("y", function (d) { return d.y; })
+					.attr("text-anchor", "middle")
+					.text(function (d) { return d.text; });
+
+				// Animate the word cloud.
+				setInterval(function () {
+					wordCloud.start();
+					cloud.transition()
+						.duration(1000)
+						.attr("x", function (d) { return d.x; })
+						.attr("y", function (d) { return d.y; })
+						.attr("transform", function (d) { return "rotate(" + d.rotate + ")"; });
+				}, 1000);
+
+			});
+
+		</script>
+		<p>
+			I begin my weekdays with invigorating <a href="https://games.crossfit.com/athlete/1683143">CrossFit</a>
+			classes.
+			My quality time with my 11-year-old son is a cherished
+			priority. Saturdays are dedicated to conquering <a href="https://leetcode.com/alexey_wish/"> coding
+				competitions</a>, and my latest passion is tackling <a
+				href="https://drive.google.com/file/d/1SqelAr8MxaKq5mMCCU8aXsHf0lpdco-K/view?usp=sharing">Spartan
+				Races</a>. I also indulge in beach volleyball and chess occasionally, though not as frequently as I'd
+			prefer. My
+			love for reading is evident; you can explore my book recommendations on my <a
+				href="https://www.goodreads.com/alexeybutyrev"> Goodreads</a> profile.
+		</p>
 </div>

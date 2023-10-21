@@ -10,7 +10,7 @@ body{
 body { margin: 70px; width: auto; }
 
 .container {border-bottom: 1px solid #d5d5d5;}
-a { text-decoration: none; color: #999; }
+a { text-decoration: none; color: #000080; }
 a:hover { text-decoration: underline; }
 
 p, ul { font-size: 1.5em; line-height: 1.4em; color: #333; }
@@ -29,7 +29,7 @@ a:active {
 #navigation li  a.current {
     text-decoration: underline;
   }
-footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
+footer { border-top: 1px solid #000080; font-size: .8em; }
 
 /* Blog */
 ul.posts { margin: 20px auto 40px; font-size: 1.5em; }

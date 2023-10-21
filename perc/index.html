@@ -10,7 +10,7 @@ title: Hobbies
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.js"></script>
 	<script>
 		const words = [
-			{ text: "CrossFit", link: "https://example.com/word1" },
+			{ text: "CrossFit", link: "https://chess.com" },
 			{ text: "Chess", link: "https://example.com/word2" },
 			{ text: "Volleyball", link: "https://example.com/word3" },
 			{ text: "Being Dad", link: "https://example.com/word3" },
@@ -21,6 +21,7 @@ title: Hobbies
 			{ text: "Reading", link: "https://example.com/word3" },
 			{ text: "Calling Friends", link: "https://example.com/word3" },
 			{ text: "Meetups", link: "https://example.com/word3" },
+			{ text: "Healthy Eating", link: "https://example.com/word3" },
 			// Add more words and links as needed
 		];
 
@@ -29,7 +30,7 @@ title: Hobbies
 		const layout = d3.layout.cloud()
 			.size([800, 400])
 			.words(words.map(function (d) {
-				return { text: d.text, size: 10 + Math.random() * 40, color: getRandomColor() };
+				return { text: d.text, size: 10 + Math.random() * 40, color: getRandomColor(), rotate: getRandomRotation() };
 			}))
 			.padding(5)
 			.rotate(0)
@@ -42,6 +43,11 @@ title: Hobbies
 		function getRandomColor() {
 			// Generate a random hexadecimal color
 			return "#" + Math.floor(Math.random() * 16777215).toString(16);
+		}
+
+		function getRandomRotation() {
+			// Generate a random rotation angle between -90 and 90 degrees
+			return Math.random() * 180 - 90;
 		}
 
 		function draw(words) {
@@ -84,8 +90,8 @@ title: Hobbies
 	</script>
 
 	<p>
-		I begin my weekdays with invigorating <a href="https://games.crossfit.com/athlete/1683143">CrossFit</a>
-		classes.
+		I begin my weekdays with 5am <a href="https://games.crossfit.com/athlete/1683143">CrossFit</a>
+		workouts.
 		My quality time with my 11-year-old son is a cherished
 		priority. Saturdays are dedicated to conquering <a href="https://leetcode.com/alexey_wish/"> coding
 			competitions</a>, and my latest passion is tackling <a

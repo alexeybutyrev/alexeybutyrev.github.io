@@ -112,9 +112,20 @@ title: Professional
 			.attr("stroke-width", 2)
 			.attr("r", 12);
 
+		// Change the color of all connected edges to Lime
+		link.style("stroke", function (l) {
+			if (l.source === d || l.target === d) {
+				return "lime";
+			} else {
+				return l.originalColor; // Restore original color for non-connected edges
+			}
+		});
+
 		d3.select(this)
 			.select("text")
 			.style("font-weight", "bold");
+
+
 	}
 
 	function dragended(d) {
@@ -129,10 +140,62 @@ title: Professional
 			.attr("stroke", null)
 			.attr("r", 10);
 
-		d3.select(this)
-			.select("text")
-			.style("font-weight", "normal");
-	}
+
+		To change the color of all edges connected to a dragged node to Lime while the node is being dragged and change them back to their original color after the drag operation is dropped, you can modify the dragstarted and dragended functions to include edge color changes.Here's how you can do it:
+
+		javascript
+		Copy code
+		function dragstarted(d) {
+			if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+			d.fx = d.x;
+			d.fy = d.y;
+
+			// Change the node's color to red, add a black stroke, and make the font bold
+			d3.select(this)
+				.select("circle")
+				.attr("fill", "red")
+				.attr("stroke", "black")
+				.attr("stroke-width", 2)
+				.attr("r", 12); // Increase the circle size
+
+			d3.select(this)
+				.select("text")
+				.style("font-weight", "bold");
+
+			// Change the color of all connected edges to Lime
+			link.style("stroke", function (l) {
+				if (l.source === d || l.target === d) {
+					return "lime";
+				} else {
+					return l.originalColor; // Restore original color for non-connected edges
+				}
+			});
+		}
+
+		function dragended(d) {
+			if (!d3.event.active) simulation.alphaTarget(0);
+			d.fx = null;
+			d.fy = null;
+
+			// Change the node's color back to its original color, remove the stroke, and reset the font weight
+			d3.select(this)
+				.select("circle")
+				.attr("fill", function (d) { return color(d.group); })
+				.attr("stroke", null)
+				.attr("r", 10); // Reset the circle size
+
+			d3.select(this)
+				.select("text")
+				.style("font-weight", "normal");
+
+			// Change the color of all connected edges back to their original colors
+			link.style("stroke", function (l) {
+				return l.originalColor;
+			});
+			d3.select(this)
+				.select("text")
+				.style("font-weight", "normal");
+		}
 
 </script>
 

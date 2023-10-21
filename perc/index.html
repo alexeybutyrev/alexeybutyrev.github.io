@@ -10,9 +10,17 @@ title: Hobbies
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.js"></script>
 	<script>
 		const words = [
-			{ text: "Word1", link: "https://example.com/word1" },
-			{ text: "Word2", link: "https://example.com/word2" },
-			{ text: "Word3", link: "https://example.com/word3" },
+			{ text: "CrossFit", link: "https://example.com/word1" },
+			{ text: "Chess", link: "https://example.com/word2" },
+			{ text: "Volleyball", link: "https://example.com/word3" },
+			{ text: "Being Dad", link: "https://example.com/word3" },
+			{ text: "Spartan Races", link: "https://example.com/word3" },
+			{ text: "Competitive Programming", link: "https://example.com/word3" },
+			{ text: "Jelly Cakes", link: "https://example.com/word3" },
+			{ text: "Learning Things", link: "https://example.com/word3" },
+			{ text: "Reading", link: "https://example.com/word3" },
+			{ text: "Calling Friends", link: "https://example.com/word3" },
+			{ text: "Meetups", link: "https://example.com/word3" },
 			// Add more words and links as needed
 		];
 
@@ -70,8 +78,7 @@ title: Hobbies
 					.append("a")
 					.attr("href", d.link)
 					.attr("target", "_blank") // Open links in a new tab
-					.append("tspan")
-					.text(d.text);
+					.append("tspan");
 			});
 		}
 	</script>

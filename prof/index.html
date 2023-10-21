@@ -112,15 +112,6 @@ title: Professional
 			.attr("stroke-width", 2)
 			.attr("r", 12);
 
-		// Change the color of all connected edges to Lime
-		link.style("stroke", function (l) {
-			if (l.source === d || l.target === d) {
-				return "lime";
-			} else {
-				return l.originalColor; // Restore original color for non-connected edges
-			}
-		});
-
 		d3.select(this)
 			.select("text")
 			.style("font-weight", "bold");

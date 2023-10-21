@@ -12,6 +12,7 @@ title: Hobbies
 		color: rgb(9, 138, 208);
 	}
 </style>
+
 <script>
 	const words = [
 		{ text: "Word1", link: "https://example.com/word1" },
@@ -34,39 +35,49 @@ title: Hobbies
 		.on("end", draw);
 
 	layout.start();
+
 	function getRandomColor() {
 		// Generate a random hexadecimal color
 		return "#" + Math.floor(Math.random() * 16777215).toString(16);
 	}
+
 	function draw(words) {
-		container
+		const svg = container
 			.append("svg")
 			.attr("width", layout.size()[0])
 			.attr("height", layout.size()[1])
 			.append("g")
-			.attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+			.attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")");
+
+		const textElements = svg
 			.selectAll("text")
 			.data(words)
 			.enter()
 			.append("text")
 			.style("font-size", "1px") // Start with a small font size
 			.style("font-family", "Impact")
-			.style("fill", "black")
+			.style("fill", d => d.color) // Set the random color
 			.attr("text-anchor", "middle")
 			.attr("transform", function (d) {
 				return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
 			})
-			.text(function (d) { return d.text; })
+			.text(function (d) { return d.text; });
+
+		textElements
 			.transition() // Apply animation
 			.duration(1500) // Animation duration in milliseconds
-			.style("font-size", function (d) { return d.size + "px"; })
-			.on("end", function () {
-				d3.select(this)
-					.append("a")
-					.attr("href", function (d) { return d.link; }) // Add hyperlink
-					.append("span")
-					.text(function (d) { return d.text; });
-			});
+			.style("font-size", function (d) { return d.size + "px"; });
+
+		// Add hyperlinks to the text elements
+		textElements.each(function (d) {
+			d3.select(this)
+				.append("tspan")
+				.append("a")
+				.attr("href", d.link)
+				.attr("target", "_blank") // Open links in a new tab
+				.append("tspan")
+				.text(d.text);
+		});
 	}
 </script>
 <div class="blurb2">

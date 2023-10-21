@@ -25,116 +25,50 @@ title: Hobbies
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script>
 
-		var svg = d3.select("svg"),
-			width = +svg.attr("width"),
-			height = +svg.attr("height");
+		// List of words
+		var myWords = [{ word: "Running", size: "10" }, { word: "Surfing", size: "20" }, { word: "Climbing", size: "50" }, { word: "Kiting", size: "30" }, { word: "Sailing", size: "20" }, { word: "Snowboarding", size: "60" }]
 
-		var color = d3.scaleOrdinal(d3.schemeCategory20);
+		// set the dimensions and margins of the graph
+		var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+			width = 450 - margin.left - margin.right,
+			height = 450 - margin.top - margin.bottom;
 
-		var simulation = d3.forceSimulation()
-			.force("link", d3.forceLink().id(function (d) { return d.id; }))
-			.force("charge", d3.forceManyBody())
-			.force("center", d3.forceCenter(width / 2, height / 2));
+		// append the svg object to the body of the page
+		var svg = d3.select("#my_dataviz").append("svg")
+			.attr("width", width + margin.left + margin.right)
+			.attr("height", height + margin.top + margin.bottom)
+			.append("g")
+			.attr("transform",
+				"translate(" + margin.left + "," + margin.top + ")");
 
-		d3.json("miserables.json", function (error, graph) {
-			if (error) throw error;
+		// Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
+		// Wordcloud features that are different from one word to the other must be here
+		var layout = d3.layout.cloud()
+			.size([width, height])
+			.words(myWords.map(function (d) { return { text: d.word, size: d.size }; }))
+			.padding(5)        //space between words
+			.rotate(function () { return ~~(Math.random() * 2) * 90; })
+			.fontSize(function (d) { return d.size; })      // font size of words
+			.on("end", draw);
+		layout.start();
 
-			var link = svg.append("g")
-				.attr("class", "links")
-				.selectAll("line")
-				.data(graph.links)
-				.enter().append("line")
-				.attr("stroke-width", function (d) { return Math.sqrt(d.value); });
-
-			var node = svg.append("g")
-				.attr("class", "nodes")
-				.selectAll("g")
-				.data(graph.nodes)
-				.enter().append("g")
-
-			var circles = node.append("circle")
-				.attr("r", 10)
-				.attr("fill", function (d) { return color(d.group); });
-
-			// Create a drag handler and append it to the node object instead
-			var drag_handler = d3.drag()
-				.on("start", dragstarted)
-				.on("drag", dragged)
-				.on("end", dragended);
-
-			drag_handler(node);
-
-			var lables = node.append("text")
-				.text(function (d) {
-					return d.label;
+		// This function takes the output of 'layout' above and draw the words
+		// Wordcloud features that are THE SAME from one word to the other can be here
+		function draw(words) {
+			svg
+				.append("g")
+				.attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+				.selectAll("text")
+				.data(words)
+				.enter().append("text")
+				.style("font-size", function (d) { return d.size; })
+				.style("fill", "#69b3a2")
+				.attr("text-anchor", "middle")
+				.style("font-family", "Impact")
+				.attr("transform", function (d) {
+					return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
 				})
-				.attr('x', 6)
-				.attr('y', 3);
-
-			node.append("title")
-				.text(function (d) { return d.label; });
-
-			simulation
-				.nodes(graph.nodes)
-				.on("tick", ticked);
-
-			simulation.force("link")
-				.links(graph.links).distance([150]);
-
-			function ticked() {
-				link
-					.attr("x1", function (d) { return d.source.x; })
-					.attr("y1", function (d) { return d.source.y; })
-					.attr("x2", function (d) { return d.target.x; })
-					.attr("y2", function (d) { return d.target.y; });
-
-				node
-					.attr("transform", function (d) {
-						return "translate(" + d.x + "," + d.y + ")";
-					})
-			}
-		});
-
-		function dragstarted(d) {
-			if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-			d.fx = d.x;
-			d.fy = d.y;
-		}
-
-		function dragged(d) {
-			d.fx = d3.event.x;
-			d.fy = d3.event.y;
-
-			// Change the node's color when the drag starts
-			d3.select(this)
-				.select("circle")
-				.attr("fill", "#00FF00")
-				.attr("stroke", "black")
-				.attr("stroke-width", 2)
-				.attr("r", 12);
-
-			d3.select(this)
-				.select("text")
-				.style("font-weight", "bold");
-
-
-		}
-
-		function dragended(d) {
-			if (!d3.event.active) simulation.alphaTarget(0);
-			d.fx = null;
-			d.fy = null;
-
-			// Change the node's color back to its original color when the drag ends
-			d3.select(this)
-				.select("circle")
-				.attr("fill", function (d) { return color(d.group); })
-				.attr("stroke", null)
-				.attr("r", 10);
-
-			d3.select(this)
-				.select("text")
-				.style("font-weight", "normal");
+				.text(function (d) { return d.text; });
 		}
 
 	</script>

@@ -4,6 +4,31 @@ title: Hobbies
 ---
 <div class="blurb2">
 	<h1>Outside of Work</h1>
+	<div id="word-cloud"></div>
+
+	<script>
+		// Sample words and their frequencies (you should replace this with your text analysis)
+		const words = [
+			{ word: "My", frequency: 5 },
+			{ word: "Passion", frequency: 3 },
+			{ word: "CrossFit", frequency: 2 },
+			// Add more words and frequencies as needed
+		];
+
+		const container = d3.select("#word-cloud");
+
+		const maxSize = d3.max(words, d => d.frequency);
+		const fontSizeScale = d3.scaleLinear()
+			.domain([0, maxSize])
+			.range([12, 48]); // Set the range of font sizes
+
+		container.selectAll("div")
+			.data(words)
+			.enter()
+			.append("div")
+			.style("font-size", d => fontSizeScale(d.frequency) + "px")
+			.text(d => d.word);
+	</script>
 	<p>
 		I begin my weekdays with invigorating <a href="https://games.crossfit.com/athlete/1683143">CrossFit</a> classes.
 		My quality time with my 11-year-old son is a cherished

@@ -52,7 +52,7 @@ title: Professional
 			.enter().append("g")
 
 		var circles = node.append("circle")
-			.attr("r", 10)
+			.attr("r", 12)
 			.attr("fill", function (d) { return color(d.group); });
 
 		// Create a drag handler and append it to the node object instead
@@ -103,12 +103,18 @@ title: Professional
 	function dragged(d) {
 		d.fx = d3.event.x;
 		d.fy = d3.event.y;
+
+		// Change the node's color when the drag starts
+		d3.select(this).select("circle").attr("fill", "red");
 	}
 
 	function dragended(d) {
 		if (!d3.event.active) simulation.alphaTarget(0);
 		d.fx = null;
 		d.fy = null;
+
+		// Change the node's color back to its original color when the drag ends
+		d3.select(this).select("circle").attr("fill", function (d) { return color(d.group); });
 	}
 
 </script>

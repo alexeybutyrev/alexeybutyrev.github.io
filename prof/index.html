@@ -162,14 +162,6 @@ title: Professional
 				.select("text")
 				.style("font-weight", "bold");
 
-			// Change the color of all connected edges to Lime
-			link.style("stroke", function (l) {
-				if (l.source === d || l.target === d) {
-					return "lime";
-				} else {
-					return l.originalColor; // Restore original color for non-connected edges
-				}
-			});
 		}
 
 		function dragended(d) {
@@ -188,10 +180,6 @@ title: Professional
 				.select("text")
 				.style("font-weight", "normal");
 
-			// Change the color of all connected edges back to their original colors
-			link.style("stroke", function (l) {
-				return l.originalColor;
-			});
 			d3.select(this)
 				.select("text")
 				.style("font-weight", "normal");

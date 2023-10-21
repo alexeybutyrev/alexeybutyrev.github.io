@@ -4,84 +4,16 @@ title: Hobbies
 ---
 <div class="blurb2">
 	<h1>Outside of Work</h1>
-	<div id="word-cloud"></div>
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<script>
-		// List of words
-		var myWords = ["Hello", "Everybody", "How", "Are", "You", "Today", "It", "Is", "A", "Lovely", "Day", "I", "Love", "Coding", "In", "My", "Van", "Mate"]
-
-		// set the dimensions and margins of the graph
-		var margin = { top: 10, right: 10, bottom: 10, left: 10 },
-			width = 450 - margin.left - margin.right,
-			height = 450 - margin.top - margin.bottom;
-
-		// append the svg object to the body of the page
-		var svg = d3.select("#my_dataviz").append("svg")
-			.attr("width", width + margin.left + margin.right)
-			.attr("height", height + margin.top + margin.bottom)
-			.append("g")
-			.attr("transform",
-				"translate(" + margin.left + "," + margin.top + ")");
-
-		// Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
-		var layout = d3.layout.cloud()
-			.size([width, height])
-			.words(myWords.map(function (d) { return { text: d }; }))
-			.padding(10)
-			.fontSize(60)
-			.on("end", draw);
-		layout.start();
-
-		// This function takes the output of 'layout' above and draw the words
-		// Better not to touch it. To change parameters, play with the 'layout' variable above
-		function draw(words) {
-			svg
-				.append("g")
-				.attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
-				.selectAll("text")
-				.data(words)
-				.enter().append("text")
-				.style("font-size", function (d) { return d.size + "px"; })
-				.attr("text-anchor", "middle")
-				.attr("transform", function (d) {
-					return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-				})
-				.text(function (d) { return d.text; });
-		}
-	</script>
-
-	</html>
-	In this example:
-
-	The words array contains the words you want in the word cloud, along with their respective hyperlinks.
-
-	We create hyperlinks for each word by using the <a> element and setting the href attribute to the link associated
-		with the word.
-
-		The span element is used to display the word text, and you can style it as needed.
-
-		Random font sizes and spacing between words are applied for a more visually appealing word cloud. You can adjust
-		these styles as desired.
-
-		This code will create a word cloud with the words "CrossFit," "Chess," and "Reading," each with a hyperlink to a
-		corresponding webpage. The appearance and styling can be further customized to match your design preferences.
-
-
-
-
-
-
-		</script>
-		<p>
-			I begin my weekdays with invigorating <a href="https://games.crossfit.com/athlete/1683143">CrossFit</a>
-			classes.
-			My quality time with my 11-year-old son is a cherished
-			priority. Saturdays are dedicated to conquering <a href="https://leetcode.com/alexey_wish/"> coding
-				competitions</a>, and my latest passion is tackling <a
-				href="https://drive.google.com/file/d/1SqelAr8MxaKq5mMCCU8aXsHf0lpdco-K/view?usp=sharing">Spartan
-				Races</a>. I also indulge in beach volleyball and chess occasionally, though not as frequently as I'd
-			prefer. My
-			love for reading is evident; you can explore my book recommendations on my <a
-				href="https://www.goodreads.com/alexeybutyrev"> Goodreads</a> profile.
-		</p>
+	<p>
+		I begin my weekdays with invigorating <a href="https://games.crossfit.com/athlete/1683143">CrossFit</a>
+		classes.
+		My quality time with my 11-year-old son is a cherished
+		priority. Saturdays are dedicated to conquering <a href="https://leetcode.com/alexey_wish/"> coding
+			competitions</a>, and my latest passion is tackling <a
+			href="https://drive.google.com/file/d/1SqelAr8MxaKq5mMCCU8aXsHf0lpdco-K/view?usp=sharing">Spartan
+			Races</a>. I also indulge in beach volleyball and chess occasionally, though not as frequently as I'd
+		prefer. My
+		love for reading is evident; you can explore my book recommendations on my <a
+			href="https://www.goodreads.com/alexeybutyrev"> Goodreads</a> profile.
+	</p>
 </div>

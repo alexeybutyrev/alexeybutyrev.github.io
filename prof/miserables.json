@@ -126,6 +126,11 @@
       "label": "NumPy"
     },
     {
+      "id": "LangChain",
+      "group": 3,
+      "label": "LangChain"
+    },
+    {
       "id": "Jupyter",
       "group": 1,
       "label": "Jupyter"
@@ -154,6 +159,11 @@
       "id": "LLM",
       "group": 4,
       "label": "LLM"
+    },
+    {
+      "id": "NLP",
+      "group": 4,
+      "label": "NLP"
     },
     {
       "id": "Machine Learning",
@@ -353,6 +363,11 @@
       "value": 4
     },
     {
+      "source": "4",
+      "target": "NLP",
+      "value": 4
+    },
+    {
       "source": "1",
       "target": "2",
       "value": 4
@@ -385,6 +400,11 @@
     {
       "source": "3",
       "target": "Keras",
+      "value": 4
+    },
+    {
+      "source": "3",
+      "target": "LangChain",
       "value": 4
     }
   ]

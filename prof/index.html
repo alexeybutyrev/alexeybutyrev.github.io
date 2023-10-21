@@ -140,50 +140,10 @@ title: Professional
 			.attr("stroke", null)
 			.attr("r", 10);
 
-
-		To change the color of all edges connected to a dragged node to Lime while the node is being dragged and change them back to their original color after the drag operation is dropped, you can modify the dragstarted and dragended functions to include edge color changes.Here's how you can do it:
-
-		javascript
-		Copy code
-		function dragstarted(d) {
-			if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-			d.fx = d.x;
-			d.fy = d.y;
-
-			// Change the node's color to red, add a black stroke, and make the font bold
-			d3.select(this)
-				.select("circle")
-				.attr("fill", "red")
-				.attr("stroke", "black")
-				.attr("stroke-width", 2)
-				.attr("r", 12); // Increase the circle size
-
-			d3.select(this)
-				.select("text")
-				.style("font-weight", "bold");
-
-		}
-
-		function dragended(d) {
-			if (!d3.event.active) simulation.alphaTarget(0);
-			d.fx = null;
-			d.fy = null;
-
-			// Change the node's color back to its original color, remove the stroke, and reset the font weight
-			d3.select(this)
-				.select("circle")
-				.attr("fill", function (d) { return color(d.group); })
-				.attr("stroke", null)
-				.attr("r", 10); // Reset the circle size
-
-			d3.select(this)
-				.select("text")
-				.style("font-weight", "normal");
-
-			d3.select(this)
-				.select("text")
-				.style("font-weight", "normal");
-		}
+		d3.select(this)
+			.select("text")
+			.style("font-weight", "normal");
+	}
 
 </script>
 

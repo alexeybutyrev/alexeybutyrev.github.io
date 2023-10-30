@@ -4,4 +4,4 @@ alexeybutyrev.github.io
 
 🐐 Goat Counter Link is at <https://abutyrev.goatcounter.com/>.
 
-📮 [email](butirev@gmail.com) me
+📮 [Email](butirev@gmail.com) me

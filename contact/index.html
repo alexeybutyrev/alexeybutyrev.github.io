@@ -33,18 +33,6 @@ title: Contact
 
 		var color = "#F92672";
 
-		//Title on top
-		svg.append("text")
-			.attr("class", "title")
-			.attr("x", 0)
-			.attr("y", -height / 2 - 20)
-			.style("text-anchor", "middle")
-			.text("With motion blur filter");
-
-		///////////////////////////////////////////////////////////////////////////
-		//////////////////// Switch between blur and no blur //////////////////////
-		///////////////////////////////////////////////////////////////////////////	
-
 		//Switch between blur filter and no filter on click
 		var blurOn = true;
 		function switchBlur() {
@@ -121,17 +109,24 @@ title: Contact
 		flyCircles
 			.append("line")
 			.attr("class", "line")
-			.attr("x1", 0) // Starting x-coordinate (center of the circle)
-			.attr("y1", 0) // Starting y-coordinate (center of the circle)
+			.attr("x1", 0)
+			.attr("y1", 0)
 			.attr("x2", function (d) {
-				// Ending x-coordinate (center of the circle after rotation)
-				return d.radius * Math.cos(d.fixedAngle);
+				const x2 = d.radius * Math.cos(d.fixedAngle);
+				if (isNaN(x2)) {
+					console.log("x2 is NaN for data:", d);
+				}
+				return x2;
 			})
 			.attr("y2", function (d) {
-				// Ending y-coordinate (center of the circle after rotation)
-				return d.radius * Math.sin(d.fixedAngle);
+				const y2 = d.radius * Math.sin(d.fixedAngle);
+				if (isNaN(y2)) {
+					console.log("y2 is NaN for data:", d);
+				}
+				return y2;
 			})
-			.style("stroke", "black"); // Adjust the line color as needed
+			.style("stroke", "black");
+
 		//Append circle at center
 		circleWrapper.append("circle")
 			.attr("class", "centerCircle")

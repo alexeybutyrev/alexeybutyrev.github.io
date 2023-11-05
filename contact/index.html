@@ -31,7 +31,7 @@ title: Contact
 			.append("g")
 			.attr("transform", "translate(" + (margin.left + width / 2) + "," + (margin.top + height / 2) + ")");
 
-		var color = "#F92672";
+		var color = "#FFD700";
 
 		//Switch between blur filter and no filter on click
 		var blurOn = true;
@@ -105,27 +105,7 @@ title: Contact
 			.attr("r", 12)
 			.style("fill", color)
 			.style("filter", function (d, i) { return "url(#motionBlurFilter-" + i + ")"; });
-		// Append lines from center to the center of each circle
-		flyCircles
-			.append("line")
-			.attr("class", "line")
-			.attr("x1", 0)
-			.attr("y1", 0)
-			.attr("x2", function (d) {
-				const x2 = d.radius * Math.cos(d.fixedAngle);
-				if (isNaN(x2)) {
-					console.log("x2 is NaN for data:", d);
-				}
-				return x2;
-			})
-			.attr("y2", function (d) {
-				const y2 = d.radius * Math.sin(d.fixedAngle);
-				if (isNaN(y2)) {
-					console.log("y2 is NaN for data:", d);
-				}
-				return y2;
-			})
-			.style("stroke", "black");
+
 
 		//Append circle at center
 		circleWrapper.append("circle")

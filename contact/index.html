@@ -5,7 +5,6 @@ title: Contact
 <div class="blurb2">
 	<h1>Contact Information</h1>
 	<div id="movingCircles"></div>
-	<div id="explanation">Click anywhere to turn on/off the motion blur filter</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 	<script language="javascript" type="text/javascript">
@@ -52,7 +51,7 @@ title: Contact
 
 			//Change title
 			d3.selectAll(".title")
-				.text(blurOn ? "Without motion blur filter" : "With motion blur filter");
+				.text(blurOn ? "" : "");
 
 			d3.selectAll(".flyCircle")
 				.style("filter", function (d, i) { return blurOn ? "none" : "url(#motionBlurFilter-" + i + ")"; });
@@ -118,7 +117,21 @@ title: Contact
 			.attr("r", 12)
 			.style("fill", color)
 			.style("filter", function (d, i) { return "url(#motionBlurFilter-" + i + ")"; });
-
+		// Append lines from center to the center of each circle
+		flyCircles
+			.append("line")
+			.attr("class", "line")
+			.attr("x1", 0) // Starting x-coordinate (center of the circle)
+			.attr("y1", 0) // Starting y-coordinate (center of the circle)
+			.attr("x2", function (d) {
+				// Ending x-coordinate (center of the circle after rotation)
+				return d.radius * Math.cos(d.fixedAngle);
+			})
+			.attr("y2", function (d) {
+				// Ending y-coordinate (center of the circle after rotation)
+				return d.radius * Math.sin(d.fixedAngle);
+			})
+			.style("stroke", "black"); // Adjust the line color as needed
 		//Append circle at center
 		circleWrapper.append("circle")
 			.attr("class", "centerCircle")

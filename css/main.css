@@ -74,6 +74,20 @@ ul.posts li { list-style: none; }
     background: #d9534f;
     border-radius: 1020px;
 }
+.easy {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 65%;
+    font-weight: 100;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background: #16df56;
+    border-radius: 1020px;
+}
 
 
 
